@@ -60,15 +60,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameController.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\FrameRate.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\GroundTest.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\WeaponScripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\WeaponScripts\Exploding.cs" />
+    <Compile Include="Assets\Scripts\WeaponScripts\Bullets\Bullet.cs" />
+    <Compile Include="Assets\Scripts\WeaponScripts\Bullets\Exploding.cs" />
     <Compile Include="Assets\Scripts\WeaponScripts\Weapon.cs" />
+    <Compile Include="Assets\Scripts\WeaponTest.cs" />
     <Compile Include="Assets\Shaders\ColorChanger.cs" />
     <Compile Include="Assets\Shaders\SwapIndex.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
