@@ -1367,6 +1367,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: 5, y: 4, z: 0}
+    second:
+      m_TileIndex: 15
+      m_TileSpriteIndex: 15
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: 6, y: 4, z: 0}
     second:
       m_TileIndex: 3
@@ -1552,6 +1561,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: cd7959e52ac6e4a4d990ead6b824589b, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 367434e23a9cfc948b80aeb72b3154d5, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: f0b8eba42dae36849b74c442ec0c55df, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 21
     m_Data: {fileID: 21300002, guid: e2056d1097e310f4486115ad18c4024e, type: 3}
@@ -1583,8 +1594,10 @@ Tilemap:
     m_Data: {fileID: 21300026, guid: e2056d1097e310f4486115ad18c4024e, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300038, guid: e2056d1097e310f4486115ad18c4024e, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300054, guid: e2056d1097e310f4486115ad18c4024e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 159
+  - m_RefCount: 160
     m_Data:
       e00: 1
       e01: 0
@@ -1603,7 +1616,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 159
+  - m_RefCount: 160
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1769,6 +1782,14 @@ CompositeCollider2D:
       - X: 60000000
         Y: 60000000
       - X: 60000000
+        Y: 50000000
+      - X: 50000000
+        Y: 50000000
+      - X: 50000000
+        Y: 40000000
+      - X: 60000000
+        Y: 40000000
+      - X: 60000000
         Y: -10000000
       - X: 190000000
         Y: -10000000
@@ -1842,6 +1863,10 @@ CompositeCollider2D:
       - {x: 11, y: 4}
       - {x: 11, y: 6}
       - {x: 6, y: 6}
+      - {x: 6, y: 5}
+      - {x: 5, y: 5}
+      - {x: 5, y: 4}
+      - {x: 6, y: 4}
       - {x: 6, y: -1}
       - {x: 19, y: -1}
     - - {x: 5, y: 4}

@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump" + id) && jump == false)
         {
+            MyRigidBody.velocity = new Vector2(MyRigidBody.velocity.x, 0);
             MyRigidBody.AddForce(new Vector3(0f, jumpHeight * 100));
             jump = true;
         }
@@ -225,7 +226,7 @@ public class PlayerController : MonoBehaviour
      * Overide in respective class files
      *    
      */
-    private void Ability()
+     public virtual void Ability()
     {
 
     }
@@ -243,6 +244,7 @@ public class PlayerController : MonoBehaviour
         WeaponPickup();
         WeaponDrop();
         WeaponShoot();
+        Ability();
     }
 
     /* FixedUpdate
