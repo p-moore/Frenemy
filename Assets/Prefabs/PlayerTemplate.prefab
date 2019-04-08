@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  speed: 4
+  speed: 5
   jumpHeight: 7
   slideSpeed: 5
   currentHp: 10

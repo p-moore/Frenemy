@@ -11,7 +11,7 @@ public class GroundTest : MonoBehaviour
        parent = this.transform.parent.GetComponent<PlayerController>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Weapon") { parent.touchingWeapons.Add(other.gameObject); }
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Platform")) { parent.onGround = true; }
