@@ -12,9 +12,14 @@ public class GroundTest : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Weapon") { parent.touchingWeapons.Add(other.gameObject); }
+    { 
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Platform")) { parent.onGround = true; }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Weapon") { parent.touchingWeapons.Add(other.gameObject);}
+        
     }
 
     void OnTriggerExit2D(Collider2D other)

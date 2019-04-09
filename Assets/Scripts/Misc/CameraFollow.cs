@@ -41,7 +41,7 @@ public class CameraFollow : MonoBehaviour
             for(int j = i + 1; j < targets.Count; j++)
             {
                 newDistance = Vector3.Distance(targets[i].position, targets[j].position);
-                Debug.Log(newDistance);
+                //Debug.Log(newDistance);
                 if (newDistance > longestDistance) { longestDistance = newDistance;}
             }
         }
