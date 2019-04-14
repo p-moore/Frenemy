@@ -4,42 +4,53 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    //This array refers to the chosen classes of the players.
-    //For example if playerClass[0] == 1
-    //it means that player 1 has chosen the Spy class.
-    //The contents of this array should be changed in the Charecter select 
-    //Stage
-    static int[] playerClass = new int[4];
-
-    //Number of total players in game
-    static int NumberOfPlayers;
-
-    //Spawnpoints for the given level
-    //Stored inside the level prefab
-    //Attached at somepoint
-    [SerializeField] Transform[] spawnPoint;
-
-    //Classes holds the actual player objects to be spawned
-    //0 - Engi
-    //1 - Spy
-    //2 - Sci
-    //3 - Sol
-    public PlayerController[] classes;
+    static public int NUMBEROFPLAYERS;
+    static public int[] player = new int[4];
+    static public int[] playerClass = new int[4];
+    public PlayerController[] classTemplates; 
+    public Transform[] spawnPoints;
+    public CameraFollow Camera;
 
 
-    //Creates players
-    //Attaches them to the camera for tracking
-    private void SpawnPlayers()
+    public void spawnPlayers()
     {
-        for(int i = 0; i < NumberOfPlayers; i++)
+        for (int i = 0; i < spawnPoints.Length; i++)
         {
-
+            PlayerController tempPlayer = Instantiate(classTemplates[playerClass[i]], spawnPoints[i].position, spawnPoints[i].rotation);
+            tempPlayer.id = i + 1;
+            Camera.targets.Add(tempPlayer.transform);
+        }
+    }
+    //For Charecter Slection
+    //index 0 is player 1
+    //Class 0 = EGI
+    //Class 1 = SPY
+    //Class 2 = SCI
+    //Class 3 = SOL
+    void Start()
+    {
+        Camera = FindObjectOfType<CameraFollow>();
+        if(spawnPoints[0] != null)
+        {
+            spawnPlayers();
         }
     }
 
-    private void Awake()
+    public void PlayerOneClassSwitch(int newPlayerClass)
     {
-
+        playerClass[0] = newPlayerClass;
+    }
+    public void PlayerTwoClassSwitch(int newPlayerClass)
+    {
+        playerClass[1] = newPlayerClass;
+    }
+    public void PlayerThreeClassSwitch(int newPlayerClass)
+    {
+        playerClass[2] = newPlayerClass;
+    }
+    public void PlayerFourClassSwitch(int newPlayerClass)
+    {
+        playerClass[3] = newPlayerClass;
     }
 
 }

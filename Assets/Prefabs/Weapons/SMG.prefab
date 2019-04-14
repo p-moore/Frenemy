@@ -42,39 +42,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG
       objectReference: {fileID: 0}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: bulletTemplate
-      value: 
-      objectReference: {fileID: 8691393039324517490, guid: 2c5116e03f480499eba554e70779aea7,
-        type: 3}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: smokeParticle
-      value: 
-      objectReference: {fileID: 4771454046656115214, guid: 868c39e5902aa4f6890fef4483ee1901,
-        type: 3}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: EndOfGun
-      value: 
-      objectReference: {fileID: 667309920817586999}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: particleOffset.x
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: particleOffset.y
-      value: 0.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976174645853979883, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300004, guid: f87f2583db3b59f4180303fb732cf96a,
-        type: 3}
     - target: {fileID: 8976174645853979882, guid: a8144d18689404302ae6a9a6bf27cda4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -128,6 +95,60 @@ PrefabInstance:
     - target: {fileID: 8976174645853979882, guid: a8144d18689404302ae6a9a6bf27cda4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976174645853979883, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: f87f2583db3b59f4180303fb732cf96a,
+        type: 3}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: bulletTemplate
+      value: 
+      objectReference: {fileID: 8691393039324517490, guid: 2c5116e03f480499eba554e70779aea7,
+        type: 3}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: smokeParticle
+      value: 
+      objectReference: {fileID: 4771454046656115214, guid: 868c39e5902aa4f6890fef4483ee1901,
+        type: 3}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: EndOfGun
+      value: 
+      objectReference: {fileID: 667309920817586999}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: particleOffset.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: particleOffset.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: bulletGeneric
+      value: 
+      objectReference: {fileID: 8691393039324517490, guid: 2c5116e03f480499eba554e70779aea7,
+        type: 3}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: firerate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: ammo
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: isHeld
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

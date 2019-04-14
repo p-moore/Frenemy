@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject owner;
     public int speed;
+    public float damage;
 
     void OnBecameInvisible()
     {
@@ -14,6 +15,12 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Player") && other.gameObject != owner)
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
+            player.setHP(player.getHP() - damage);
+        }
+
         if (other.gameObject.CompareTag("Ground") || (other.gameObject.CompareTag("Player") && other.gameObject != owner))
         {
             Destroy(this.gameObject);

@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     private bool onCoolDown = false;
     public float coolDownTime;
     public float timestamp;
+    public int Damage;
     public Bullet bulletGeneric;
     public GameObject smokeParticle;
     
@@ -41,7 +42,6 @@ public class Weapon : MonoBehaviour
             }
         }
     }
-
 
     public void Shoot()
     {

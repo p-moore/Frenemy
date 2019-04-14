@@ -16,7 +16,7 @@ public class ColorChanger : MonoBehaviour
     float mHitEffectTimer = 0.0f;
     const float cHitEffectTime = 0.1f;
 
-    void Awake()
+    void Start()
     {
         mSpriteRenderer = GetComponent<SpriteRenderer>();
         InitColorSwapTex();

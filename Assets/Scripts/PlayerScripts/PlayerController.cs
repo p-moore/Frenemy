@@ -45,6 +45,17 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     GameObject bar;
 
+    public void setHP(float value)
+    {
+        currentHp = value;
+        if (currentHp < 0) { currentHp = 0;}
+    }
+
+    public float getHP()
+    {
+        return currentHp;
+    }
+
 
     //Start method sets refrences
     void Start()
@@ -57,10 +68,6 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Platform")) {onGround = true; jump = false; }
-        if (other.gameObject.CompareTag("Bullet")) {
-            if(other.GetComponent<Bullet>().owner != gameObject)
-            currentHp--;
-        }
 
     }
 
@@ -192,7 +199,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Pickup" + id))
         {
-           if (touchingWeapons.Count > 0)
+           if (touchingWeapons.Count > 0 && currentWeapon == null)
             {
                 touchingWeapons[0].transform.parent = transform;
                 currentWeapon = touchingWeapons[0];
