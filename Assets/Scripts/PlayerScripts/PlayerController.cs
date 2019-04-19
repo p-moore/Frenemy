@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private bool hasGun = false;
     private int isFacing = 1;
     private bool isSliding = false;
+    private bool dead = false;
 
     //Variables you don't change
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
@@ -49,11 +50,24 @@ public class PlayerController : MonoBehaviour
     {
         currentHp = value;
         if (currentHp < 0) { currentHp = 0;}
+        if (currentHp == 0) {
+            animator.SetTrigger("Died");
+            dead = true;
+            WeaponDrop();
+        }
+        bar.GetComponent<HealthBar>().SetHp(currentHp / maxHp);
     }
 
     public float getHP()
     {
         return currentHp;
+    }
+
+    public void Respawn()
+    {
+        FindObjectOfType<GameController>().Respawn(id);
+        FindObjectOfType<CameraFollow>().targets.Remove(transform);
+        Destroy(this.gameObject);
     }
 
 
@@ -63,6 +77,7 @@ public class PlayerController : MonoBehaviour
         MyRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         bar = transform.Find("Bar").gameObject;
+        bar.GetComponent<HealthBar>().SetHp(currentHp / maxHp);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -104,7 +119,7 @@ public class PlayerController : MonoBehaviour
    */
     private void Jump()
     {
-        if (Input.GetButtonDown("Jump" + id) && jump == false)
+        if (Input.GetButtonDown("Jump" + id) && jump == false && !isSliding)
         {
             MyRigidBody.velocity = new Vector2(MyRigidBody.velocity.x, 0);
             MyRigidBody.AddForce(new Vector3(0f, jumpHeight * 100));
@@ -199,22 +214,29 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Pickup" + id))
         {
-           if (touchingWeapons.Count > 0 && currentWeapon == null)
+            if (touchingWeapons.Count > 0 && currentWeapon == null)
             {
                 touchingWeapons[0].transform.parent = transform;
                 currentWeapon = touchingWeapons[0];
                 currentWeapon.transform.rotation = transform.rotation;
-                currentWeapon.transform.localPosition = new Vector2(0,-.5f);
+                currentWeapon.transform.localPosition = new Vector2(0, -.5f);
                 currentWeapon.GetComponent<Weapon>().isHeld = true;
+            }
+            else if (currentWeapon != null || dead && currentWeapon != null)
+            {
+                currentWeapon.GetComponent<Weapon>().isHeld = false;
+                currentWeapon.transform.parent = null;
+                currentWeapon = null;
             }
         }
     }
     /*WeaponDrop
-     *   
+     *Not used anymore
+     * Dropping logic moved to Weapon pickup function to map both actions to same button
     */
     private void WeaponDrop()
     {
-        if (Input.GetButtonDown("DropWeapon" + id) && currentWeapon != null)
+        if (Input.GetButtonDown("DropWeapon" + id) && currentWeapon != null || dead && currentWeapon != null)
         {
             currentWeapon.GetComponent<Weapon>().isHeld = false;
             currentWeapon.transform.parent = null;
@@ -222,11 +244,12 @@ public class PlayerController : MonoBehaviour
         }
     }
     /*WeaponShoot 
+     *   Calls the shoot function on the weapon
      *   
      */
     private void WeaponShoot()
     {
-        if (Input.GetButtonDown("Fire" + id) || Input.GetAxis("Fire" + id) > 0) { currentWeapon.GetComponent<Weapon>().Shoot(); }
+        if (Input.GetButtonDown("Fire" + id) || Input.GetAxis("Fire" + id) > 0 && currentWeapon != null) { currentWeapon.GetComponent<Weapon>().Shoot(); }
     }
 
     /*Ability
@@ -248,8 +271,9 @@ public class PlayerController : MonoBehaviour
      */
     private void Action()
     {
+
         WeaponPickup();
-        WeaponDrop();
+       // WeaponDrop();
         WeaponShoot();
         Ability();
     }
@@ -264,11 +288,18 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
-        Move();
-        Action();
-        bar.GetComponent<HealthBar>().SetHp(currentHp / maxHp);
-        if (currentWeapon != null) {
-            currentWeapon.transform.position = GunLocation.position;
+        if (!dead)
+        {
+
+
+            Move();
+            Action();
+
+            if (currentWeapon != null)
+            {
+                currentWeapon.transform.position = GunLocation.position;
+            }
+
         }
     }
 }
