@@ -10,7 +10,7 @@ public class Explosion : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.GetComponent<PlayerController>();
-            player.setHP(player.getHP() - damage);
+            player.DamageEvent(damage);
         }
     }
     

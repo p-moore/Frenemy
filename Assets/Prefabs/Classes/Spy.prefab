@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5789026698498103646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608892352038761212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74e6702ff9d745ca881a864175c4db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  speed: 7
+  jumpHeight: 7
+  slideSpeed: 5
+  currentHp: 10
+  maxHp: 10
+  onGround: 0
+  jump: 0
+  m_MovementSmoothing: 0.05
+  touchingWeapons: []
+  currentWeapon: {fileID: 0}
+  GunLocation: {fileID: 6456952746940894894}
+  moveHorizontal: 0
+  slideCoolDownDuration: 0.2
+  soundEffect:
+  - {fileID: 8300000, guid: 6ad32d12c26ca1c4bbc594e99a9fc199, type: 3}
+  audioPlayer: {fileID: 7209853485795772175}
 --- !u!1001 &888005777568326459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12,6 +41,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spy
       objectReference: {fileID: 0}
+    - target: {fileID: 4533171578963854946, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+        type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 353146997231908463, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5789026698498103646}
     - target: {fileID: 4222507483976116476, guid: 3c7a42d8cedb9494bb37e22e086ac124,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,20 +112,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b07712f1376c34100b8540e3ede87599,
         type: 3}
-    - target: {fileID: 4854747017537504157, guid: 3c7a42d8cedb9494bb37e22e086ac124,
-        type: 3}
-      propertyPath: m_TagString
-      value: Checker
-      objectReference: {fileID: 0}
     - target: {fileID: 7995920725410593988, guid: 3c7a42d8cedb9494bb37e22e086ac124,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8e545a60c36fb4d4789da6bb470b3e6b, type: 2}
-    - target: {fileID: 4533171578963854946, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+    - target: {fileID: 4854747017537504157, guid: 3c7a42d8cedb9494bb37e22e086ac124,
         type: 3}
-      propertyPath: id
-      value: 1
+      propertyPath: m_TagString
+      value: Checker
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c7a42d8cedb9494bb37e22e086ac124, type: 3}
+--- !u!1 &608892352038761212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 297779441362047431, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+    type: 3}
+  m_PrefabInstance: {fileID: 888005777568326459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7209853485795772175 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7519989963569259572, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+    type: 3}
+  m_PrefabInstance: {fileID: 888005777568326459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6456952746940894894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6181578465285860757, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+    type: 3}
+  m_PrefabInstance: {fileID: 888005777568326459}
+  m_PrefabAsset: {fileID: 0}

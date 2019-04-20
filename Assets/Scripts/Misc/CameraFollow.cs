@@ -35,7 +35,7 @@ public class CameraFollow : MonoBehaviour
         float longestDistance = 0;
         float newDistance = 0;
         float minDistance = 6;
-        float maxDistance = 10;
+        float maxDistance = 15;
         for(int i = 0; i < targets.Count - 1; i++)
         {
             for(int j = i + 1; j < targets.Count; j++)

@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classTemplates:
-  - {fileID: 7150362613407782967, guid: aebb602a984a4d14cbe0b49ab99aece1, type: 3}
-  - {fileID: 3655756333916743001, guid: 1ae3bf23f4bc11b4c986fb44dd5b4620, type: 3}
-  - {fileID: 9025989448048711777, guid: dde30fb3181814eaa85a4e9e07ef03cc, type: 3}
-  - {fileID: 5925023625858032255, guid: 3f18f1c55554949ddbe80e055944a9eb, type: 3}
+  - {fileID: 6001699942271765012, guid: aebb602a984a4d14cbe0b49ab99aece1, type: 3}
+  - {fileID: 1038631455533191050, guid: dde30fb3181814eaa85a4e9e07ef03cc, type: 3}
+  - {fileID: 537959369602947309, guid: 3f18f1c55554949ddbe80e055944a9eb, type: 3}
+  - {fileID: 5789026698498103646, guid: 1ae3bf23f4bc11b4c986fb44dd5b4620, type: 3}
   spawnPoints: []
+  Camera: {fileID: 0}

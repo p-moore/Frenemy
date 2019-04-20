@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &537959369602947309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561837077685712346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2205b957e2aeea948bdfe9f025e14aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  speed: 7
+  jumpHeight: 7
+  slideSpeed: 5
+  currentHp: 10
+  maxHp: 10
+  onGround: 0
+  jump: 0
+  m_MovementSmoothing: 0.05
+  touchingWeapons: []
+  currentWeapon: {fileID: 0}
+  GunLocation: {fileID: 4114467945873688968}
+  slideCoolDownDuration: 0.2
 --- !u!1001 &7841019911925736477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12,6 +37,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 353146997231908463, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 537959369602947309}
     - target: {fileID: 4222507483976116476, guid: 3c7a42d8cedb9494bb37e22e086ac124,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80,3 +110,15 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 81cc84a0039425e4382d030917371c80, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c7a42d8cedb9494bb37e22e086ac124, type: 3}
+--- !u!1 &7561837077685712346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 297779441362047431, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+    type: 3}
+  m_PrefabInstance: {fileID: 7841019911925736477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4114467945873688968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6181578465285860757, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+    type: 3}
+  m_PrefabInstance: {fileID: 7841019911925736477}
+  m_PrefabAsset: {fileID: 0}

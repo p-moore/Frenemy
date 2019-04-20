@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int speed;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float slideSpeed;
-    [SerializeField] private float currentHp;
+    [SerializeField] protected float currentHp;
     [SerializeField] private float maxHp;
 
     //Player state variables 
@@ -37,25 +37,35 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> touchingWeapons;
     public GameObject currentWeapon;
     public Transform GunLocation;
-    private float moveHorizontal;
+    [SerializeField]private float moveHorizontal;
     float slideCoolDown;
     public float slideCoolDownDuration;
+    public AudioClip[] soundEffect;
 
     //Player Compoents needed for reference later
     Rigidbody2D MyRigidBody;
     Animator animator;
-    GameObject bar;
+    protected GameObject bar;
+    [SerializeField] protected AudioSource audioPlayer;
+
+
+    //Gets overriden later in Engineer class to implement armor
+    public virtual void DamageEvent(float Damage)
+    {
+        setHP(currentHp - Damage);
+    }
 
     public void setHP(float value)
     {
         currentHp = value;
         if (currentHp < 0) { currentHp = 0;}
+        if (currentHp > maxHp) { currentHp = maxHp;}
         if (currentHp == 0) {
             animator.SetTrigger("Died");
             dead = true;
             WeaponDrop();
         }
-        bar.GetComponent<HealthBar>().SetHp(currentHp / maxHp);
+        bar.GetComponent<Bar>().SetBar(currentHp / maxHp);
     }
 
     public float getHP()
@@ -72,12 +82,12 @@ public class PlayerController : MonoBehaviour
 
 
     //Start method sets refrences
-    void Start()
+    virtual protected void Start()
     {
         MyRigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         bar = transform.Find("Bar").gameObject;
-        bar.GetComponent<HealthBar>().SetHp(currentHp / maxHp);
+        bar.GetComponent<Bar>().SetBar(currentHp / maxHp);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -106,7 +116,7 @@ public class PlayerController : MonoBehaviour
      *Utility function used by Move()
      *Just rotates the sprite 180 degrees
      */
-    private void Flip()
+    virtual protected void Flip()
     {
         transform.Rotate(new Vector3(0, 180, 0));
         bar.transform.Rotate(new Vector3(0, 180, 0));
@@ -249,7 +259,7 @@ public class PlayerController : MonoBehaviour
      */
     private void WeaponShoot()
     {
-        if (Input.GetButtonDown("Fire" + id) || Input.GetAxis("Fire" + id) > 0 && currentWeapon != null) { currentWeapon.GetComponent<Weapon>().Shoot(); }
+        if ((Input.GetButtonDown("Fire" + id) || Input.GetAxis("Fire" + id) > 0) && currentWeapon != null) { currentWeapon.GetComponent<Weapon>().Shoot(); }
     }
 
     /*Ability
@@ -273,7 +283,6 @@ public class PlayerController : MonoBehaviour
     {
 
         WeaponPickup();
-       // WeaponDrop();
         WeaponShoot();
         Ability();
     }

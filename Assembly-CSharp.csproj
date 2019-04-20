@@ -57,10 +57,13 @@
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Misc\FrameRate.cs" />
      <Compile Include="Assets\Scripts\Misc\TeleportTrigger.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\Bar.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\ClassScripts\EngController.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\ClassScripts\SciController.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\ClassScripts\SolController.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\ClassScripts\SpyController.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\GroundTest.cs" />
-     <Compile Include="Assets\Scripts\PlayerScripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\PlayerScripts\SpyController.cs" />
      <Compile Include="Assets\Scripts\UI\ColorChangerUI.cs" />
      <Compile Include="Assets\Scripts\UI\Countdown.cs" />
      <Compile Include="Assets\Scripts\UI\LevelChanger.cs" />

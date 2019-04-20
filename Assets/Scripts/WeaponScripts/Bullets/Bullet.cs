@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && other.gameObject != owner)
         {
             PlayerController player = other.GetComponent<PlayerController>();
-            player.setHP(player.getHP() - damage);
+            player.DamageEvent(damage);
         }
 
         if (other.gameObject.CompareTag("Ground") || (other.gameObject.CompareTag("Player") && other.gameObject != owner))
