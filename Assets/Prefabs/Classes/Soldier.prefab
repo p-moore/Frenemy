@@ -16,15 +16,20 @@ MonoBehaviour:
   speed: 7
   jumpHeight: 7
   slideSpeed: 5
-  currentHp: 10
-  maxHp: 10
+  currentHp: 100
+  maxHp: 100
   onGround: 0
   jump: 0
   m_MovementSmoothing: 0.05
   touchingWeapons: []
   currentWeapon: {fileID: 0}
   GunLocation: {fileID: 4114467945873688968}
+  moveHorizontal: 0
   slideCoolDownDuration: 0.2
+  soundEffect:
+  - {fileID: 8300000, guid: fb0cd3b87ee67e247b74f7539406c86c, type: 3}
+  - {fileID: 8300000, guid: 4e1bd463c87fb9440ba8655f7787ccc4, type: 3}
+  audioPlayer: {fileID: 0}
 --- !u!1001 &7841019911925736477
 PrefabInstance:
   m_ObjectHideFlags: 0

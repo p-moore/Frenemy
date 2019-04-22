@@ -15,7 +15,8 @@ public class Weapon : MonoBehaviour
     public int Damage;
     public Bullet bulletGeneric;
     public GameObject smokeParticle;
-    
+    [SerializeField] AudioSource audioPlayer;
+    [SerializeField] AudioClip[] soundEffects;
     
 
     void OnTriggerEnter2D(Collider2D other)
@@ -41,6 +42,10 @@ public class Weapon : MonoBehaviour
                 onCoolDown = false;
             }
         }
+        if (!isHeld && ammo == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Shoot()
@@ -52,9 +57,11 @@ public class Weapon : MonoBehaviour
             ammo--;
             onCoolDown = true;
             coolDownTime = firerate;
+            audioPlayer.PlayOneShot(soundEffects[0]);
         }
         if(ammo == 0)
         {
+            audioPlayer.PlayOneShot(soundEffects[1]);
             Instantiate(smokeParticle, EndOfGun.position, transform.rotation);
         }
     }

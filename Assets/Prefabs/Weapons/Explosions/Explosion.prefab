@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1edc22072f3198e4baf39d6a5ec56754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 50
 --- !u!250 &4871987355295032787
 PointEffector2D:
   m_ObjectHideFlags: 0

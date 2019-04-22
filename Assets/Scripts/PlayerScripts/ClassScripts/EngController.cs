@@ -16,15 +16,20 @@ public class EngController : PlayerController
 
     public override void DamageEvent(float Damage)
     {
-        CurrentArmor -= Damage;
-        if (CurrentArmor < 0) { CurrentArmor = 0; }
-        UpdateArmorBar();
-
+        
         if (CurrentArmor <= 0)
         {
             base.DamageEvent(Damage);
         }
+        else
+        {
+            audioPlayer.PlayOneShot(soundEffect[2]);
+            CurrentArmor -= Damage;
+            if (CurrentArmor < 0) { CurrentArmor = 0; }
+            UpdateArmorBar();
+        }
     }
+
     protected override void Flip()
     {
         base.Flip();

@@ -13,6 +13,9 @@ public class BossController : MonoBehaviour
     private float shootTime = 5f; 
     private Rigidbody2D rb;
     [SerializeField]private Bullet bossBullet;
+    public GameController gamecontroller;
+    [SerializeField] AudioClip[] SoundEffects;
+    [SerializeField] AudioSource audioPlayer;
 
     void Shoot()
     {
@@ -27,9 +30,13 @@ public class BossController : MonoBehaviour
 
     public void setHp(float Damage)
     {
+        audioPlayer.PlayOneShot(SoundEffects[0]);
         CurrentHp -= Damage;
         if (CurrentHp <= 0)
         {
+            audioPlayer.PlayOneShot(SoundEffects[1]);
+            gamecontroller.isBossDead = true;
+            gamecontroller.checkGameover();
             Destroy(gameObject);
         }
     }

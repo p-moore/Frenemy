@@ -16,15 +16,20 @@ MonoBehaviour:
   speed: 7
   jumpHeight: 7
   slideSpeed: 5
-  currentHp: 10
-  maxHp: 10
+  currentHp: 100
+  maxHp: 100
   onGround: 0
   jump: 0
   m_MovementSmoothing: 0.05
   touchingWeapons: []
   currentWeapon: {fileID: 0}
   GunLocation: {fileID: 1613043758721856406}
+  moveHorizontal: 0
   slideCoolDownDuration: 0
+  soundEffect:
+  - {fileID: 8300000, guid: fb0cd3b87ee67e247b74f7539406c86c, type: 3}
+  - {fileID: 8300000, guid: 4e1bd463c87fb9440ba8655f7787ccc4, type: 3}
+  audioPlayer: {fileID: 0}
   healAmount: 5
 --- !u!1001 &4876217642477133315
 PrefabInstance:
@@ -97,6 +102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519989963569259572, guid: 3c7a42d8cedb9494bb37e22e086ac124,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4533171578963854946, guid: 3c7a42d8cedb9494bb37e22e086ac124, type: 3}

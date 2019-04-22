@@ -16,8 +16,8 @@ MonoBehaviour:
   speed: 7
   jumpHeight: 7
   slideSpeed: 5
-  currentHp: 10
-  maxHp: 10
+  currentHp: 100
+  maxHp: 100
   onGround: 0
   jump: 0
   m_MovementSmoothing: 0.05
@@ -26,9 +26,13 @@ MonoBehaviour:
   GunLocation: {fileID: 584165846255891392}
   moveHorizontal: 0
   slideCoolDownDuration: 0.3
+  soundEffect:
+  - {fileID: 8300000, guid: fb0cd3b87ee67e247b74f7539406c86c, type: 3}
+  - {fileID: 8300000, guid: 4e1bd463c87fb9440ba8655f7787ccc4, type: 3}
+  - {fileID: 8300000, guid: f6b79bb6ff6e9c547890c28b60e15347, type: 3}
   audioPlayer: {fileID: 3859127923388873313}
-  CurrentArmor: 10
-  MaxArmor: 10
+  CurrentArmor: 25
+  MaxArmor: 25
   ArmorToBeRestored: 5
   ArmorBar: {fileID: 6510434444191113366}
 --- !u!1001 &811881265033819544

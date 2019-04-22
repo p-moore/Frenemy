@@ -18,7 +18,7 @@ public class SpyController : PlayerController
         bar.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = !option;
         bar.transform.GetChild(0).GetChild(1).GetComponent<SpriteRenderer>().enabled = !option;
         isInvis = option;
-        audioPlayer.PlayOneShot(soundEffect[0]);
+        audioPlayer.PlayOneShot(soundEffect[2]);
     }
 
     override public void Ability()

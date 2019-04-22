@@ -9,8 +9,14 @@ public class ScoreScreen : MonoBehaviour
 
     void Start()
     {
-
-       Winner.GetComponent<TextMeshProUGUI>().SetText("Player " + GameController.idOfWinner);
+        if (GameController.idOfWinner != -1)
+        {
+            Winner.GetComponent<TextMeshProUGUI>().SetText("Player " + GameController.idOfWinner);
+        }
+        else
+        {
+            Winner.GetComponent<TextMeshProUGUI>().SetText("The Boss Won");
+        }
 
 
     }

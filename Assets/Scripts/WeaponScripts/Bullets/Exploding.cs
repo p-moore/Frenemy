@@ -8,7 +8,7 @@ public class Exploding : Bullet
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.CompareTag("Ground") || (other.gameObject.CompareTag("Player") && other.gameObject != owner))
+        if ((other.gameObject.CompareTag("Ground")) || ((other.gameObject.CompareTag("Player") && other.gameObject != owner)) || (other.gameObject.CompareTag("Boss")))
         {
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(this.gameObject);

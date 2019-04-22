@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     //Gets overriden later in Engineer class to implement armor
     public virtual void DamageEvent(float Damage)
     {
+        audioPlayer.PlayOneShot(soundEffect[1]);
         setHP(currentHp - Damage);
     }
 
@@ -134,6 +135,7 @@ public class PlayerController : MonoBehaviour
             MyRigidBody.velocity = new Vector2(MyRigidBody.velocity.x, 0);
             MyRigidBody.AddForce(new Vector3(0f, jumpHeight * 100));
             jump = true;
+            audioPlayer.PlayOneShot(soundEffect[0]);
         }
     }
 

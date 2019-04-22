@@ -12,6 +12,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: bulletGeneric
+      value: 
+      objectReference: {fileID: 3144348461805872245, guid: 9f4c6c4f8ded72b41a85ef603d68442f,
+        type: 3}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: firerate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: ammo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130811419666325617, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.347
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130811419666325617, guid: a8144d18689404302ae6a9a6bf27cda4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.094
+      objectReference: {fileID: 0}
     - target: {fileID: 8976174645853979882, guid: a8144d18689404302ae6a9a6bf27cda4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,32 +92,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: bulletGeneric
-      value: 
-      objectReference: {fileID: 8691393039324517490, guid: 2c5116e03f480499eba554e70779aea7,
-        type: 3}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: firerate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976174645853979884, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: ammo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130811419666325617, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.347
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130811419666325617, guid: a8144d18689404302ae6a9a6bf27cda4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.094
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8144d18689404302ae6a9a6bf27cda4, type: 3}

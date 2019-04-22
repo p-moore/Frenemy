@@ -12,6 +12,11 @@ public class Explosion : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             player.DamageEvent(damage);
         }
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            BossController Boss = other.GetComponent<BossController>();
+            Boss.setHp(damage);
+        }
     }
     
     public void ExplosionEnd()

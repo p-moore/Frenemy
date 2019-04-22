@@ -16,8 +16,8 @@ MonoBehaviour:
   speed: 7
   jumpHeight: 7
   slideSpeed: 5
-  currentHp: 10
-  maxHp: 10
+  currentHp: 100
+  maxHp: 100
   onGround: 0
   jump: 0
   m_MovementSmoothing: 0.05
@@ -27,6 +27,8 @@ MonoBehaviour:
   moveHorizontal: 0
   slideCoolDownDuration: 0.2
   soundEffect:
+  - {fileID: 8300000, guid: fb0cd3b87ee67e247b74f7539406c86c, type: 3}
+  - {fileID: 8300000, guid: 4e1bd463c87fb9440ba8655f7787ccc4, type: 3}
   - {fileID: 8300000, guid: 6ad32d12c26ca1c4bbc594e99a9fc199, type: 3}
   audioPlayer: {fileID: 7209853485795772175}
 --- !u!1001 &888005777568326459

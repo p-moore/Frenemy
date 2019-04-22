@@ -6,8 +6,8 @@ public class GameController : MonoBehaviour
 {
     static public int NUMBEROFPLAYERS = 4;
     static public int NUMBEROFPLAYERSALIVE;
-    static public int NUMBEROFLIVES = 3;
-    static public GameObject[] player = new GameObject[4];
+    static public int NUMBEROFLIVES = 0;
+    public List<PlayerController> player = new List<PlayerController>();
     static public int[] lives = new int[4];
     static public int[] playerClass = new int[4];
     static public int idOfWinner = 1;
@@ -19,31 +19,45 @@ public class GameController : MonoBehaviour
 
     //float timeUntilBoss = 5f;
     float bossTimer = 30f;
+    public bool isBossDead;
 
     public CameraFollow Camera;
 
 
 
-    private bool checkGameover()
+    public bool checkGameover()
     {
-        if (NUMBEROFPLAYERSALIVE == 1) { return true; }
+        //One player alive means boss and other players killed
+        if (NUMBEROFPLAYERSALIVE == 1 && isBossDead)
+        {
+            idOfWinner = player[0].id;
+            return true;
+        }
+        //No players alive means boss wins
+        if (NUMBEROFPLAYERSALIVE == 0)
+        {
+            idOfWinner = -1;
+
+            return true;
+        }
         return false;
     }
     public void spawnPlayers()
     {
-        for (int i = 0; i < spawnPoints.Length; i++)
+        for (int i = 0; i < NUMBEROFPLAYERS; i++)
         {
             PlayerController tempPlayer = Instantiate(classTemplates[playerClass[i]], spawnPoints[i].position, spawnPoints[i].rotation);
             tempPlayer.id = i + 1;
             Camera.targets.Add(tempPlayer.transform);
             lives[i] = NUMBEROFLIVES;
             NUMBEROFPLAYERSALIVE++;
+            player.Add(tempPlayer);
         }
     }
 
     public void Respawn(int id)
     {
-        if(lives[id-1] >= 0)
+        if(lives[id-1] > 0)
         {
             PlayerController tempPlayer = Instantiate(classTemplates[playerClass[id - 1]], spawnPoints[id - 1].position, spawnPoints[id - 1].rotation);
             tempPlayer.id = id;
@@ -59,6 +73,7 @@ public class GameController : MonoBehaviour
     public void SpawnBoss()
     {
         BossController Boss = Instantiate(bossTemplate, bossSpawnPoint.position, bossSpawnPoint.rotation);
+        Boss.gamecontroller = this;
         bossSpawned = true;
     }
 
