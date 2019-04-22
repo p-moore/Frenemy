@@ -9,6 +9,7 @@ TagManager:
   - Checker
   - Platform
   - Bullet
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Weapon
   - Ground
   - Checker
-  - 
+  - Boss
   - 
   - 
   - 

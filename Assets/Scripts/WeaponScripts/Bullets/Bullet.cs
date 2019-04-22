@@ -21,6 +21,15 @@ public class Bullet : MonoBehaviour
             player.DamageEvent(damage);
         }
 
+        if (other.gameObject.CompareTag("Boss") && other.gameObject != owner)
+        {
+            BossController Boss = other.GetComponent<BossController>();
+            Boss.setHp(damage);
+            Destroy(gameObject);
+        }
+
+
+
         if (other.gameObject.CompareTag("Ground") || (other.gameObject.CompareTag("Player") && other.gameObject != owner))
         {
             Destroy(this.gameObject);
