@@ -1,35 +1,34 @@
 # Frenemy
 Fun 2D Free-For-All Unity platform game with a twist. Your enemies are also your friends! 
 
-# List available branches:
-#    Green: local branch
-#    Red:   remote branch
-$ git branch -a
+## How to Contribute
 
-# For local branches (green):
-$ git checkout <branch-name>
+### List available branches:
+`git branch -a`
+Green: local branch
+Red:   remote branch
 
-# For remote branches (red):
-$ git checkout --track <branch-name>
+### For local branches (green):
+`git checkout` <branch-name>
 
-# To create a new local branch:
-$ git checkout -b <branch-name>
-Run git status.
+### For remote branches (red):
+`git checkout --track` <branch-name>
 
-Run git pull
+### To create a new local branch:
+`git checkout -b <branch-name>
+git status
+git pull`
 
-When ready to add your changes to GitHub:
+## When ready to add your changes to GitHub:
 
-# Add your changes
-$ git add .
+### Add your changes
+`git add .`
 
-# Commit your changes locally
-$ git commit -m "Your reason for making this change."
+### Commit your changes locally
+`git commit -m "Your reason for making this change."`
 
-# Finally, push your changes to GitHub
-$ git push
+### Finally, push your changes to GitHub
+`git push`
 
-# Or if it's your first time pushing
-$ git push -u origin <branch-name>
-
-Fun fact about my contribution to this project: you can't see any of it.
+### Or if it's your first time pushing
+`git push -u origin <branch-name>`
